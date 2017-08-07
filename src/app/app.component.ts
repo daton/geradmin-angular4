@@ -14,8 +14,8 @@ import {Router} from '@angular/router';
 export class AppComponent {
   title = 'app';
  
- constructor(){
-   
+ constructor(private router:Router){
+      this.router.navigate(["/inicio"],{skipLocationChange:true});
  }
   
 }
