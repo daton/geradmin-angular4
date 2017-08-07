@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 export class InicioComponent implements OnInit {
 login:string;
  password:string;
-
+estaOculta:boolean=true;
  
 
   ngOnInit() {
@@ -22,8 +22,10 @@ constructor(private router:Router){
     console.log('jajajaja'+this.login);
     if(this.login==='admin'&& this.password==="test2017"){
       this.router.navigate(["/examenes"], {skipLocationChange:true});
+      this.estaOculta=true;
     }else{
       this.router.navigate(["/inicio"],{skipLocationChange:true});
+     this.estaOculta=false;
     }
 }
 }
