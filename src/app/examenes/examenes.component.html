@@ -1,2 +1,51 @@
-<h2>Aqui irá la estructura del dashboard de la aplicación</h2>
+<clr-wizard #wizardmd [(clrWizardOpen)]="mdOpen" clrWizardSize="md" [clrWizardClosable]="false">
+    <clr-wizard-title>Registro</clr-wizard-title>
 
+    <clr-wizard-button [type]="'cancel'" (click)="navegarInicio()">Cancelar</clr-wizard-button>
+    <clr-wizard-button [type]="'previous'">Atrás</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Siguiente</clr-wizard-button>
+    <clr-wizard-button [type]="'finish'" (click)="navegarInicio()">Fin</clr-wizard-button>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Datos generales</ng-template>
+
+
+        <input type="text" placeholder="Clave de profesor" [hidden]="noEsProfesor">
+        <input type="text" placeholder="Nombre">
+        <input type="text" placeholder="Apellido Paterno">
+        <input type="text" placeholder="Apellido Materno">
+        <input type="text" placeholder="Plantel">
+       
+
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Perfil</ng-template>
+        <label>Selecciona el turno</label>
+        <div class="auth-source select">
+            <select [(ngModel)]="perfil" id="login-auth-source-1" (click)="verPerfil()">
+            <option>Alumno</option>
+            <option>Profesor</option>
+        </select>
+        </div>
+        <br>
+        <label>Selecciona el turno</label>
+        <br>
+        <div class="auth-source select">
+            <select id="login-auth-source-1">
+        <option>Matutino</option>
+        <option>Vespertino</option>
+    </select>
+        </div>
+
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Autenticación</ng-template>
+        ...
+    </clr-wizard-page>
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Confirmación</ng-template>
+        ...
+    </clr-wizard-page>
+</clr-wizard>

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,ViewChild, OnInit } from '@angular/core';
+import {Wizard} from "clarity-angular";
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-examenes',
@@ -7,9 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExamenesComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild("wizardmd") wizardMedium:Wizard;
+
+  mdOpen:boolean=true;
+
+  perfil:string='nada';
+  noEsProfesor:boolean=true;
+
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
+
+
+navegarInicio(){
+  this.router.navigate(["/inicio"],{skipLocationChange:true});
+}
+
+verPerfil(){
+  console.log('hola');
+  if(this.perfil==='Profesor'){
+    console.log('Eres profesor');
+    this.noEsProfesor=false;
+
+  }else{
+    console.log('No eres profesor');
+    this.noEsProfesor=true;
+  }
+}
 }

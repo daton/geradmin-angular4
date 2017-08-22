@@ -4,13 +4,12 @@
         <label class="title">
             <h3 class="welcome">Benvenido a</h3>
             Grupo Educativo GEER
-            <h5 class="hint">Utiliza los datos de tu clave para ingresar</h5>
         </label>
         <div class="login-group">
             <div class="auth-source select">
                 <select id="login-auth-source-1">
-                    <option>Profesores</option>
-                    <option>Administrador</option>
+                    <option>Profesor</option>
+                    <option>Alumno</option>
                 </select>
             </div>
             <input class="username" [(ngModel)]="login" id="login_username" placeholder="Usuario">
@@ -26,8 +25,10 @@
                 Usuario o contraseña inválidos
             </div>
             
-            <button (click)="navegar()" class="btn btn-primary">Ingresar</button>
+            <button (click)="autenticar()" class="btn btn-primary">Ingresar</button>
            <!-- <a href="javascript://" class="signup">Sign up for a Company ID</a>-->
+         <h5>Regístrate primero, si aún no te has registrado con tu clave del libro</h5>
+        <button (click)="registrar()" class="btn btn-danger">Registrarse</button>
         </div>
     </div>
 </div>
