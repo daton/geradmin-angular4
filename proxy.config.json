@@ -1,6 +1,6 @@
 {
     "/api":{
-        "target":"http://geradmin.herokuapp.com",
+        "target":"http://localhost:9000",
         "secure":false,
         "changeOrigin":true,
         "logLevel":"debug"

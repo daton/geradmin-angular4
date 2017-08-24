@@ -10,11 +10,11 @@ import {Router} from '@angular/router';
 })
 export class ExamenesComponent implements OnInit {
 
-  @ViewChild("wizardmd") wizardMedium:Wizard;
+  @ViewChild("wizardlg") wizardLarge: Wizard;
 
-  mdOpen:boolean=true;
+  lgOpen: boolean = true;
 
-  perfil:string='nada';
+  perfil:string='Alumno';
   noEsProfesor:boolean=true;
 
   constructor(private router:Router) { }
