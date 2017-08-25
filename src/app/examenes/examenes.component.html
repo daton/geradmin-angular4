@@ -4,16 +4,26 @@
 
     <clr-wizard-button [type]="'cancel'" (click)="navegarInicio()">Cancelar</clr-wizard-button>
     <clr-wizard-button [type]="'previous'">Atrás</clr-wizard-button>
-    <clr-wizard-button [type]="'next'">Siguiente</clr-wizard-button>
+    <clr-wizard-button [type]="'next'" (click)="obtenerClave()"  >Siguiente</clr-wizard-button>
     <clr-wizard-button [type]="'finish'" (click)="navegarInicio()">Fin</clr-wizard-button>
 
-    <clr-wizard-page>
+    <clr-wizard-page [clrWizardPageNextDisabled]="estaInvalidada()" >
         <ng-template clrPageTitle>Datos generales</ng-template>
- <form>
+ <form class="login">
         <section class="form-block">
+
+                <div class="form-group">
+                
+                        <label>Clave del libro</label>
+                        
+                        <input  [(ngModel)]="miClave" name="miClave" id="validInput2" type="number" placeholder="Clave del libro" size="35" (blur)="obtenerClave()" >
+                   
+                    </div>
+                   
+
             <div class="form-group">
                 <label>Nombre</label>
-                <input type="text" placeholder="Nombre" size="35">
+                <input type="text" placeholder="Nombre" size="35" (blur)="estaInvalidada() && ocultar()">
             </div>
             <div class="form-group">
                 <label>Apellido Paterno</label>
@@ -23,10 +33,7 @@
                     <label>Apellido Materno</label>
                 <input type="text" placeholder="Apellido Materno" size="35">
             </div>    
-            <div class="form-group">
-                <label>Clave del libro</label>
-                <input  [(ngModel)]="clave" type="text" placeholder="Clave del libro" size="35" name="clave">
-            </div>
+            
           
         </section>
 
